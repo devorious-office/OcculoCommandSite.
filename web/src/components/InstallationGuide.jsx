@@ -13,7 +13,7 @@ export default function InstallationGuide() {
       </motion.h2>
       <ol className="max-w-2xl mx-auto space-y-6 text-white/90 text-lg list-decimal pl-8">
         <li>
-          Download <span className="font-bold text-cyan-400">occulocommand-setup.exe</span> from the official site.
+          Download <a href="https://github.com/Harsahibjit-Singh/OcculoCommandSite/releases/download/v1.0.0/OcculoCommand-Setup.exe" target="_blank" rel="noopener noreferrer" className="font-bold text-cyan-400">occulocommand-setup.exe</a> from the official site.
         </li>
         <li>
           Double-click the installer to begin.

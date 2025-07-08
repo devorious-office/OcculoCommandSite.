@@ -108,7 +108,7 @@ export default function HeroSection3() {
           className="mt-12 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
         >
           <a 
-            href="/downloads/occulocommand-setup.exe" 
+            href="https://github.com/Harsahibjit-Singh/OcculoCommandSite/releases/download/v1.0.0/OcculoCommand-Setup.exe" 
             className="px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Download Now

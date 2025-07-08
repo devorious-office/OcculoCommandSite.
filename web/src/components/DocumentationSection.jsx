@@ -57,6 +57,14 @@ export default function DocumentationSection() {
               <td className="border border-cyan-400/20 py-2 px-4">Cursor off</td>
               <td className="border border-cyan-400/20 py-2 px-4">Pauses cursor control</td>
             </tr>
+            <tr>
+              <td className="border border-cyan-400/20 py-2 px-4">Blink left eye</td>
+              <td className="border border-cyan-400/20 py-2 px-4">Performs a left click</td>
+            </tr>
+            <tr>
+              <td className="border border-cyan-400/20 py-2 px-4">Quit from tray</td>
+              <td className="border border-cyan-400/20 py-2 px-4">Completely exit OcculoCommand by right-clicking the dot icon in System tray and selecting option <span className="italic">Quit</span></td>
+            </tr>
           </tbody>
         </table>
       </div>

@@ -14,7 +14,7 @@ export default function DownloadSection() {
           Install OcculoCommand today and unlock a more inclusive way to use technology.
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href="/downloads/occulocommand-setup.exe" className="px-10 py-4 rounded-full bg-cyan-500 hover:bg-cyan-600 text-black font-bold shadow-lg transition">
+          <a href="https://github.com/Harsahibjit-Singh/OcculoCommandSite/releases/download/v1.0.0/OcculoCommand-Setup.exe" className="px-10 py-4 rounded-full bg-cyan-500 hover:bg-cyan-600 text-black font-bold shadow-lg transition">
             Download for Windows
           </a>
           <a href="#documentation" className="px-10 py-4 rounded-full border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-black font-bold transition">
