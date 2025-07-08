@@ -163,35 +163,48 @@ export default function ConnectSupportForm() {
                     {sendingOtp ? 'Sending OTP...' : 'Verify Email'}
                   </button>
                 )}
-                {otpSent && (
-                  <>
-                    <input
-                      type="text"
-                      placeholder="Enter OTP (Check your email)"
-                      required
-                      value={form.otp}
-                      onChange={e => setForm({ ...form, otp: e.target.value })}
-                      className="p-3 rounded-lg border border-cyan-400/40 bg-black/60 text-white placeholder:text-white/50 focus:ring-2 focus:ring-cyan-400 outline-none"
-                      disabled={verifyingOtp}
-                    />
-                    <small className="text-xs text-gray-400 mt-1 mb-3">
-                      Please enter the OTP sent to your email to verify your identity.
-                    </small>
-                    <button
-                      type="submit"
-                      disabled={verifyingOtp}
-                      className={`bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 rounded-lg transition shadow-lg flex justify-center items-center gap-2 ${verifyingOtp ? 'opacity-70 cursor-not-allowed' : ''}`}
-                    >
-                      {verifyingOtp && (
-                        <svg className="animate-spin h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-                        </svg>
-                      )}
-                      {verifyingOtp ? 'Verifying...' : 'Verify OTP'}
-                    </button>
-                  </>
-                )}
+{otpSent && (
+  <>
+    <input
+      type="text"
+      placeholder="Enter OTP (Check your email)"
+      required
+      value={form.otp}
+      onChange={e => setForm({ ...form, otp: e.target.value })}
+      className="p-3 rounded-lg border border-cyan-400/40 bg-black/60 text-white placeholder:text-white/50 focus:ring-2 focus:ring-cyan-400 outline-none"
+      disabled={verifyingOtp}
+    />
+    <small className="text-xs text-gray-400 mt-1 mb-3">
+      Please enter the OTP sent to your email to verify your identity.
+    </small>
+    <button
+      type="submit"
+      disabled={verifyingOtp}
+      className={`bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 rounded-lg transition shadow-lg flex justify-center items-center gap-2 ${verifyingOtp ? 'opacity-70 cursor-not-allowed' : ''}`}
+    >
+      {verifyingOtp && (
+        <svg className="animate-spin h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+        </svg>
+      )}
+      {verifyingOtp ? 'Verifying...' : 'Verify OTP'}
+    </button>
+
+    {/* Resend OTP Button */}
+    <button
+      type="button"
+      onClick={() => {
+        setOtpSent(false);
+        setForm(prev => ({ ...prev, otp: '' }));
+      }}
+      className="text-sm mt-3 underline text-cyan-400 hover:text-cyan-300 transition"
+    >
+      Resend OTP / Edit Email
+    </button>
+  </>
+)}
+
               </>
             )}
             {emailVerified && (
