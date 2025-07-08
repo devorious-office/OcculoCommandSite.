@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 
 const textParts = [
-  "Control your PC with your ",
-  "eyes\u00A0and\u00A0voice",
+  "Control your PC with your",
+  "eyes\u00A0and\u00A0voice", // Using \u00A0 for non-breaking spaces
   "."
 ];
 
@@ -46,50 +46,63 @@ export default function HeroSection3() {
           </div>
         </motion.div>
 
-        <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-          {textParts[0].split("").map((char, i) => (
-            <motion.span
-              key={`part1-${i}`}
-              custom={i}
-              initial={{ opacity: 0, x: -10 }}
-              animate={controls}
-              className="inline-block"
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-          
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">
-            {textParts[1].split("").map((char, i) => (
-              <motion.span
-                key={`part2-${i}`}
-                custom={i + textParts[0].length}
-                initial={{ opacity: 0, x: -10 }}
-                animate={controls}
-                className="inline-block"
-              >
-                {char === "\u00A0" ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </span>
-          
-          {textParts[2].split("").map((char, i) => (
-            <motion.span
-              key={`part3-${i}`}
-              custom={i + textParts[0].length + textParts[1].length}
-              initial={{ opacity: 0, x: -10 }}
-              animate={controls}
-              className="inline-block"
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
 
-          <motion.span
-            className="inline-block border-r-2 border-white animate-pulse ml-1 h-12 align-middle"
-            aria-hidden="true"
-          />
-        </motion.h1>
+
+
+<motion.h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-center">
+  {/* First line */}
+  {textParts[0].split("").map((char, i) => (
+    <motion.span
+      key={`part1-${i}`}
+      custom={i}
+      initial={{ opacity: 0, x: -10 }}
+      animate={controls}
+      className="inline-block whitespace-pre"
+    >
+      {char}
+    </motion.span>
+  ))}
+
+  <br />
+
+  {/* Second line — gradient text */}
+  <motion.span
+    custom={textParts[0].length}
+    initial={{ opacity: 0, x: -10 }}
+    animate={controls}
+    className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500 whitespace-pre"
+    style={{
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+    }}
+  >
+    {textParts[1]}
+  </motion.span>
+
+  {/* Period (final punctuation) */}
+  {textParts[2].split("").map((char, i) => (
+    <motion.span
+      key={`part3-${i}`}
+      custom={i + textParts[0].length + textParts[1].length}
+      initial={{ opacity: 0, x: -10 }}
+      animate={controls}
+      className="inline-block whitespace-pre"
+    >
+      {char}
+    </motion.span>
+  ))}
+
+  {/* Blinking cursor */}
+{/* <motion.span
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: totalChars * 0.1 + 0.2 }}
+  className="inline-block border-r-2 border-white animate-pulse ml-1 h-12 align-middle"
+  aria-hidden="true"
+/> */}
+
+</motion.h1>
+
 
         <motion.p
           initial={{ opacity: 0 }}
